@@ -1,0 +1,22 @@
+// Everything that changes per deploy lives here; every page reads the name and
+// the trigger from this file.
+
+export const BRAND = {
+  name: "CommenterPad",
+  trigger: "@CommenterPad", // what people type in a comment (the account they tag)
+  x: "https://x.com/CommenterPad",
+};
+
+export const CONFIG = {
+  // The service (not built yet). Until it answers, the coin feed shows examples.
+  api: "",
+  pumpUrl: (mint) => `https://pump.fun/coin/${mint}`,
+  solscan: (addr) => `https://solscan.io/token/${addr}`,
+};
+
+// Every launch is paired with its platform's coin instead of SOL.
+export const PAIRS = [
+  { id: "x", platform: "X", coin: "X Coin", ticker: "X", mint: "9Hcksg9o6oXbJWN7FTAL2HFrvknqTzmmNybBYP4UA6cP", live: true },
+  { id: "instagram", platform: "Instagram", coin: "Instagram Coin", ticker: "Instagram", mint: "FeMg8o2Ek7zKWT33MfdfwXrPoMdgqyXYPjTLWvEr34XF", live: true },
+  { id: "tiktok", platform: "TikTok", coin: "TikTok Coin", ticker: "TikTok", mint: "64oAuE88tNP7KsSyaiJTKGP4sWmLMFGWLUs9eBTLYgCp", live: false },
+];

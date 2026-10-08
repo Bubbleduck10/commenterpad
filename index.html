@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CommenterPad — comment a coin into existence</title>
+<meta name="description" content="Comment a ticker and a name under any post on X or Instagram, and a pump.fun coin launches from it, paired with X Coin or Instagram Coin. Its fees buy it back and burn it.">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f4f2ec">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="./"><img src="assets/mark.svg" alt="" width="30" height="30"><span data-brand>CommenterPad</span></a>
+    <nav class="nav">
+      <a href="#how">How it works</a>
+      <a href="#pairs">Pairs</a>
+      <a href="#coins">Coins</a>
+      <a class="nav-x" href="#" data-x hidden>X</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dot"></span>Live on X and Instagram · TikTok soon</p>
+      <h1>Comment a coin<br> into existence.</h1>
+      <p class="lede">Reply <code class="say"><span class="t" data-trigger>@CommenterPad</span> <span class="k">$TICKER</span> Name</code> under any post. A pump.fun coin launches from it in seconds, with that post as its picture.</p>
+      <ul class="facts">
+        <li><b>Paired with the platform's coin.</b> An X comment's coin trades against X Coin, an Instagram comment's against Instagram Coin.</li>
+        <li><b>Its fees buy it back and burn it.</b> Every coin's creator fees are locked to its own buyback, from the moment it launches.</li>
+        <li><b>Free to comment.</b> The launch is paid for. No wallet, no sign-up.</li>
+      </ul>
+      <div class="cta">
+        <a class="btn" href="#coins">See launched coins</a>
+        <button class="btn ghost" type="button" id="copy-template">Copy the comment</button>
+      </div>
+    </div>
+
+    <div class="demo" aria-hidden="true">
+      <article class="post" id="demo-post">
+        <header class="post-head">
+          <span class="av" id="demo-av"></span>
+          <div><b id="demo-who">@sunsetchaser</b><span id="demo-where">on X</span></div>
+          <span class="plat" id="demo-plat">X</span>
+        </header>
+        <div class="post-img" id="demo-img"></div>
+        <p class="post-text" id="demo-text">golden hour hit different today</p>
+        <div class="thread">
+          <div class="cmt">
+            <span class="av me"></span>
+            <div class="cmt-body"><b>@you</b><p class="typed" id="demo-typed"></p></div>
+          </div>
+        </div>
+      </article>
+      <div class="launched" id="demo-coin">
+        <div class="launched-img" id="demo-coin-img"></div>
+        <div class="launched-body">
+          <span class="badge-live">Launched</span>
+          <b id="demo-coin-name">$GOLDEN · Golden Hour</b>
+          <span id="demo-coin-pair">paired with X Coin · buyback on</span>
+        </div>
+      </div>
+      <p class="demo-note">Example</p>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <h2>Three steps, one of them yours.</h2>
+    <ol class="steps">
+      <li>
+        <span class="n">1</span>
+        <h3>You comment</h3>
+        <p>Under any public post on X or Instagram: <code class="say sm"><span class="t" data-trigger>@CommenterPad</span> <span class="k">$TICKER</span> Name</code>. Up to 10 letters for the ticker, 32 for the name.</p>
+      </li>
+      <li>
+        <span class="n">2</span>
+        <h3>It launches</h3>
+        <p>We see the comment within seconds and launch the coin on pump.fun, named from your comment, with the post's picture. It trades against X Coin or Instagram Coin.</p>
+      </li>
+      <li>
+        <span class="n">3</span>
+        <h3>Fees burn it</h3>
+        <p>Every trade pays a creator fee, locked to the coin's own buyback wallet. The fees buy the coin back on its curve, and everything bought is burned.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="pairs" id="pairs">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The pairs</h2>
+      <p>Every coin trades against its platform's coin, so every buy of a comment coin is a buy of the platform coin first. Prices are live from DexScreener.</p>
+    </div>
+    <div class="pair-grid" id="pair-grid"></div>
+  </div>
+</section>
+
+<section class="coins" id="coins">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Launched from comments</h2>
+      <p id="coins-sub">Newest first. Each one started as a comment.</p>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="coin-grid" id="coin-grid"></div>
+  </div>
+</section>
+
+<section class="rules" id="rules">
+  <div class="wrap rules-in">
+    <div>
+      <h2>Fair launch rules</h2>
+      <p>Every launch is paid for, so a comment launches a coin only when it passes these.</p>
+    </div>
+    <ul class="rule-list">
+      <li><b>One coin per account per day.</b> Per platform.</li>
+      <li><b>One coin per post.</b> The first qualifying comment under a post wins.</li>
+      <li><b>No repeat tickers.</b> A ticker can launch once a day.</li>
+      <li><b>Real accounts.</b> On X, at least 30 days old with 10 followers.</li>
+      <li><b>Reserved names.</b> $X, $INSTAGRAM, $TIKTOK and $SOL cannot be launched, and blocked words are refused.</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p><b data-brand>CommenterPad</b> launches pump.fun coins from public comments. A coin is named by whoever commented; its picture comes from the post it was left under. Nothing here is investment advice, and a coin's price can go to zero.</p>
+    <p>Pictured in a coin and want it removed? <a href="#" id="takedown">Ask for a takedown</a>.</p>
+  </div>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
