@@ -151,13 +151,15 @@ async function coins() {
     } catch { list = null; }
   }
   const live = Array.isArray(list);
+  const tokens = (base) => { const n = Number(BigInt(base ?? "0")) / 1e6; return n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${(n / 1e3).toFixed(0)}K` : n.toFixed(0); };
+  const ago = (ms) => { const m = Math.max(0, Math.round((Date.now() - ms) / 60000)); return m < 60 ? `${m}m` : m < 1440 ? `${Math.round(m / 60)}h` : `${Math.round(m / 1440)}d`; };
   $("stats").innerHTML = [
     ["Coins launched", live ? (stats?.launched ?? list.length).toLocaleString() : "0"],
     ["Comments seen", live ? (stats?.comments ?? 0).toLocaleString() : "0"],
-    ["Bought back and burned", live ? usd(stats?.burnedUsd ?? 0) : "$0"],
+    ["Buybacks", live ? (stats?.buybacks ?? 0).toLocaleString() : "0"],
   ].map(([k, v], i) => `<div class="stat${i === 2 ? " burn" : ""}"><span>${k}</span><b>${v}</b></div>`).join("");
   if (live && list.length) {
-    $("coin-grid").innerHTML = list.map((c) => coinCard(c, false)).join("");
+    $("coin-grid").innerHTML = list.map((c) => coinCard({ ...c, burned: tokens(c.burned), age: ago(c.launchedAt) }, false)).join("");
   } else if (live) {
     $("coin-grid").innerHTML = "";
     $("coin-grid").insertAdjacentHTML("afterend", `<p class="empty">No coins yet. Be the first: comment <code class="say sm"><span class="t">${esc(BRAND.trigger)}</span> <span class="k">$TICKER</span> Name</code> under any post.</p>`);

@@ -8,8 +8,8 @@ export const BRAND = {
 };
 
 export const CONFIG = {
-  // The service (not built yet). Until it answers, the coin feed shows examples.
-  api: "",
+  // The service. Until it answers with launched coins, the feed shows examples.
+  api: "https://commenterpad-bot.onrender.com",
   pumpUrl: (mint) => `https://pump.fun/coin/${mint}`,
   solscan: (addr) => `https://solscan.io/token/${addr}`,
 };
