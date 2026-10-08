@@ -17,6 +17,6 @@ export const CONFIG = {
 // Every launch is paired with its platform's coin instead of SOL.
 export const PAIRS = [
   { id: "x", platform: "X", coin: "X Coin", ticker: "X", mint: "9Hcksg9o6oXbJWN7FTAL2HFrvknqTzmmNybBYP4UA6cP", live: true },
-  { id: "instagram", platform: "Instagram", coin: "Instagram Coin", ticker: "Instagram", mint: "FeMg8o2Ek7zKWT33MfdfwXrPoMdgqyXYPjTLWvEr34XF", live: true },
+  { id: "instagram", platform: "Instagram", coin: "Instagram Coin", ticker: "Instagram", mint: "FeMg8o2Ek7zKWT33MfdfwXrPoMdgqyXYPjTLWvEr34XF", live: false },
   { id: "tiktok", platform: "TikTok", coin: "TikTok Coin", ticker: "TikTok", mint: "64oAuE88tNP7KsSyaiJTKGP4sWmLMFGWLUs9eBTLYgCp", live: false },
 ];
