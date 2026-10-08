@@ -30,6 +30,30 @@ async function copy(text, button, label) {
 }
 $("copy-template").addEventListener("click", (e) => copy(`${BRAND.trigger} $TICKER Name`, e.currentTarget, "Copy the comment"));
 
+/* ---------- the official coin, once its address is set ---------- */
+async function official() {
+  if (!BRAND.token) return;
+  const ca = BRAND.token;
+  $("official").hidden = false;
+  $("official-ca").textContent = ca;
+  $("foot-ca").hidden = false;
+  $("foot-ca").querySelector("code").textContent = ca;
+  document.querySelectorAll("[data-copy-ca]").forEach((b) => b.addEventListener("click", () => copy(ca, b, "Copy")));
+  const link = document.querySelector("[data-token-link]");
+  link.href = CONFIG.pumpUrl(ca); link.target = "_blank"; link.rel = "noopener";
+  try {
+    const { pairs: list = [] } = await (await fetch(`https://api.dexscreener.com/latest/dex/tokens/${ca}`)).json();
+    const best = list.filter((x) => x.baseToken?.address === ca).sort((a, b) => (b.liquidity?.usd ?? 0) - (a.liquidity?.usd ?? 0))[0];
+    const sym = best?.baseToken?.symbol;
+    $("official-name").textContent = best ? `$${sym} · ${best.baseToken.name}` : "";
+    $("official-nums").textContent = best ? `${usd(Number(best.priceUsd))} · mcap ${usd(best.marketCap ?? best.fdv)}` : "";
+    link.textContent = sym ? `$${sym}` : "Coin"; link.hidden = false;
+  } catch {
+    link.textContent = "Coin"; link.hidden = false;
+  }
+}
+official();
+
 /* ---------- the demo: a comment typing under a post, then its coin ---------- */
 const EXAMPLES = [
   { plat: "X", who: "@sunsetchaser", text: "golden hour hit different today", scene: "scene-sunset", symbol: "GOLDEN", name: "Golden Hour", pair: "X Coin" },

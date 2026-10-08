@@ -21,6 +21,7 @@
       <a href="#how">How it works</a>
       <a href="#pairs">Pairs</a>
       <a href="#coins">Coins</a>
+      <a class="nav-x" href="#" data-token-link hidden></a>
       <a class="nav-x" href="#" data-x hidden>X</a>
     </nav>
   </div>
@@ -41,6 +42,10 @@
       <div class="cta">
         <a class="btn" href="#coins">See launched coins</a>
         <button class="btn ghost" type="button" id="copy-template">Copy the comment</button>
+      </div>
+      <div class="official" id="official" hidden>
+        <div class="official-top"><span class="official-k">Official coin</span><b id="official-name"></b><span class="official-nums" id="official-nums"></span></div>
+        <div class="official-ca"><code id="official-ca"></code><button type="button" class="official-copy" data-copy-ca>Copy</button></div>
       </div>
     </div>
 
@@ -138,6 +143,7 @@
   <div class="wrap foot-in">
     <p><b data-brand>CommenterPad</b> launches pump.fun coins from public comments. A coin is named by whoever commented; its picture comes from the post it was left under. Nothing here is investment advice, and a coin's price can go to zero.</p>
     <p>Pictured in a coin and want it removed? <a href="#" id="takedown">Ask for a takedown</a>.</p>
+    <p class="foot-ca" id="foot-ca" hidden>Official coin: <code></code> <button type="button" class="official-copy sm" data-copy-ca>Copy</button></p>
   </div>
 </footer>
 

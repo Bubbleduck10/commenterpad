@@ -5,6 +5,9 @@ export const BRAND = {
   name: "CommenterPad",
   trigger: "@CommenterPad", // what people type in a comment (the account they tag)
   x: "https://x.com/CommenterPad",
+  // The official coin. Empty until it launches; once set, the header, the hero and
+  // the footer show it (its name and ticker are read from DexScreener).
+  token: "7FtNnSo1GiPS1N3R8ujo2e5kAGnb3yJ6AjRhDNVTpump",
 };
 
 export const CONFIG = {

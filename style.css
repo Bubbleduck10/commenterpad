@@ -190,6 +190,18 @@ button { font: inherit; }
 .rule-list li { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 18px; color: var(--ink-2); font-size: 15px; }
 .rule-list b { color: var(--ink); }
 
+/* The official coin ------------------------------------------------------- */
+.official { margin-top: 26px; background: var(--card); border: 1px solid var(--line-2); border-radius: 18px; padding: 14px 16px; max-width: 34em; display: grid; gap: 10px; }
+.official-top { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.official-k { font: 700 11px/1 var(--body); letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--flame); padding: 5px 8px; border-radius: 999px; }
+.official-top b { font: 800 19px/1.1 var(--display); }
+.official-nums { font-size: 13px; color: var(--ink-3); }
+.official-ca { display: flex; align-items: center; gap: 10px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 8px 8px 8px 12px; }
+.official-ca code { flex: 1; min-width: 0; font: 600 12.5px/1.4 var(--mono); overflow-wrap: anywhere; }
+.official-copy { flex: none; border: 0; background: var(--ink); color: #fff; font: 600 13px/1 var(--body); padding: 8px 14px; border-radius: 999px; cursor: pointer; }
+.official-copy.sm { padding: 5px 10px; font-size: 12px; vertical-align: 1px; }
+.foot-ca code { font: 600 12px/1.4 var(--mono); color: var(--ink); overflow-wrap: anywhere; }
+
 /* Footer ------------------------------------------------------------------- */
 .foot { border-top: 1px solid var(--line); padding: 36px 0 48px; }
 .foot-in { display: grid; gap: 10px; font-size: 14px; color: var(--ink-3); max-width: 760px; }
