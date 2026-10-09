@@ -7,7 +7,7 @@ export const BRAND = {
   x: "https://x.com/CommenterPad",
   // The official coin. Empty until it launches; once set, the header, the hero and
   // the footer show it (its name and ticker are read from DexScreener).
-  token: "",
+  token: "GEoKBfY2an1FCtRmikVTDFLtQJy6YyP1TwLwQFNqpump",
 };
 
 export const CONFIG = {
